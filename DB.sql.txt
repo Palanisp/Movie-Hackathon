@@ -1,0 +1,37 @@
+create database Moviedb;
+use Moviedb;
+
+create table Movie_genre
+(genre_id int primary key NOT NULL ,
+name varchar(30);
+
+create table Movie (
+Mov_id int NOT NULL,
+Mov_title varchar (30),
+Mov_description varchar (50),
+Mov_relyear year, 
+Mov_language varchar (20), 
+Mov_runtime int,
+Mov_reldate int,
+Mov_director varchar (30),
+Mov_actor varchar (30),
+Mov_budget int,
+Mov_ratings_avg float,
+Mov_genre_id int references Movie_genre(genre_id),
+Mov_status varchar(1),
+Mov_last_update timestamp);
+
+
+insert into Movie_genre values (1001,'Action');
+insert into Movie_genre values (1002,'Adventure');
+insert into Movie_genre values (1003,'Animation');
+insert into Movie_genre values (1004,'Comedy');
+insert into Movie_genre values (1005,'Romance');
+insert into Movie_genre values (1006,'Thriller');
+
+
+insert into Movie values ( 101,'Titanic','A love story in drowning ship',1997,'English','162','19971118','James Cameroon','Leonardo',23700000,7.5,1005,'A',sysdate());
+insert into Movie values ( 102,'Avatar','A Scific story',2009,'English','194','200919971118','James Cameroon','Smith',423700000,8.0,1006,'A',sysdate());
+
+
+
