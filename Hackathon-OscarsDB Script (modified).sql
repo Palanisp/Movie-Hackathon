@@ -15,7 +15,7 @@ mov_runtime int,
 mov_director varchar (30),
 mov_actor varchar (30),
 mov_rating float,
-mov_genre_id int);
+mov_genre_id int references Movie_genre(genre_id));
 
 
 insert into genre values (1001,'Action');
